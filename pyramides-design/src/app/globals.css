@@ -1,0 +1,242 @@
+:root {
+  --green: #0e2a22;
+  --green-deep: #081d17;
+  --gold: #b8893a;
+  --gold-light: #e2c47e;
+  --gold-dark: #8a6424;
+  --gold-metal: linear-gradient(110deg, #8a6424 0%, #d9b56a 30%, #f1dc9e 50%, #b8893a 72%, #8a6424 100%);
+  --bg: #fbfaf7;
+  --bg-alt: #f4f1ea;
+  --text: #1b1f1d;
+  --muted: #5d6662;
+  --line: #e6e0d3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+img[src*="logo"] {
+  mix-blend-mode: multiply;
+}
+
+.container {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  position: relative;
+  padding: 96px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+/* Fond vert profond avec reflets dorés */
+.section-dark {
+  position: relative;
+  background: var(--green);
+  color: #fff;
+  overflow: hidden;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3 {
+  color: #fff;
+}
+
+.section-dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Texte doré métallisé, comme le mot DESIGN du logo */
+.gold {
+  background: var(--gold-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Séparateur : trait — triangle — trait */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 48px;
+  background: var(--gold-metal);
+}
+
+.divider span {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--gold);
+}
+
+.divider-center {
+  justify-content: center;
+}
+
+/* Bandeau de page (pages intérieures) */
+.page-head {
+  position: relative;
+  padding: 150px 0 72px;
+  background: var(--green);
+  overflow: hidden;
+  border-bottom: 2px solid transparent;
+  border-image: var(--gold-metal) 1;
+}
+
+.page-head h1 {
+  color: #fff;
+}
+
+.page-head p {
+  max-width: 540px;
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.page-head-motif {
+  position: absolute;
+  right: -40px;
+  bottom: -50px;
+  width: 460px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: inherit;
+  border: 1px solid var(--green);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--green);
+}
+
+.btn-gold {
+  background: var(--gold-metal);
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  color: var(--green-deep);
+  border: none;
+  padding: 15px 29px;
+  transition: background-position 0.6s ease;
+}
+
+.btn-gold:hover {
+  background: var(--gold-metal);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: var(--green-deep);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: var(--green-deep);
+}
+
+.link {
+  color: var(--green);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+  .page-head {
+    padding: 120px 0 52px;
+  }
+  .page-head-motif {
+    width: 260px;
+    opacity: 0.35;
+  }
+}

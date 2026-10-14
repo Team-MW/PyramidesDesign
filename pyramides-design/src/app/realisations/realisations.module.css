@@ -1,0 +1,54 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px 36px;
+}
+
+.imgWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.imgWrap::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(226, 196, 126, 0);
+  transition: border-color 0.4s;
+  pointer-events: none;
+}
+
+.card:hover .imgWrap::after {
+  border-color: rgba(226, 196, 126, 0.9);
+}
+
+.imgWrap img {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card:hover .imgWrap img {
+  transform: scale(1.04);
+}
+
+.meta {
+  font-size: 0.92rem;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.grid h2 {
+  font-size: 1.55rem;
+  margin-bottom: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

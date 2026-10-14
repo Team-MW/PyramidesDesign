@@ -1,0 +1,111 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 72px;
+}
+
+.info {
+  position: relative;
+  align-self: start;
+  background: var(--green);
+  padding: 44px 36px;
+  overflow: hidden;
+  border-top: 2px solid var(--gold);
+}
+
+.infoMotif {
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+  width: 240px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.info h2 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.info dl {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.info dt {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold-light);
+}
+
+.info dd {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184, 137, 58, 0.12);
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form .btn {
+  align-self: flex-start;
+}
+
+.sent {
+  padding: 32px;
+  border: 1px solid var(--gold);
+  background: #fff;
+}
+
+@media (max-width: 860px) {
+  .grid,
+  .row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .row {
+    gap: 18px;
+  }
+}

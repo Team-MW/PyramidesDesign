@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(251, 250, 247, 0.97);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold-metal);
+  opacity: 0.8;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--gold-metal);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover,
+.active {
+  color: var(--green);
+}
+
+.navLink:hover::after,
+.active::after {
+  width: 100%;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.cta {
+  margin-left: 8px;
+  padding: 10px 20px !important;
+  font-size: 0.9rem !important;
+}
+
+.toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 24px 20px;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .navLink {
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1.05rem;
+  }
+}
